@@ -1750,6 +1750,51 @@ class Embargo(Data):
     reason: str
 
 
+class ResourceStat(Data):
+    _CONVERTERS = {
+        "date": datetime.datetime.fromisoformat,
+        "money": int,
+        "food": int,
+        "steel": int,
+        "aluminum": int,
+        "gasoline": int,
+        "munitions": int,
+        "uranium": int,
+        "coal": int,
+        "oil": int,
+        "iron": int,
+        "bauxite": int,
+        "lead": int,
+    }
+
+    # Date the stat was taken
+    date: datetime.datetime
+    # Total money in the game
+    money: int
+    # Total food in the game
+    food: int
+    # Total steel in the game
+    steel: int
+    # Total aluminum in the game
+    aluminum: int
+    # Total gasoline in the game
+    gasoline: int
+    # Total munitions in the game
+    munitions: int
+    # Total uranium in the game
+    uranium: int
+    # Total coal in the game
+    coal: int
+    # Total oil in the game
+    oil: int
+    # Total iron in the game
+    iron: int
+    # Total bauxite in the game
+    bauxite: int
+    # Total lead in the game
+    lead: int
+
+
 class PaginatorInfo(Data):
     count: int  # noqa: N815
     currentPage: int  # noqa: N815

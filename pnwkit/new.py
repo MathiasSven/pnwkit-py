@@ -98,6 +98,7 @@ if TYPE_CHECKING:
         "baseball_players",
         "treasure_trades",
         "embargoes",
+        "resource_stats",
     ]
     SubscriptionFieldLiteral = Literal[
         "allianceCreate",
@@ -944,6 +945,10 @@ class Query(Generic[R]):
         ...
 
     @overload
+    def paginate(self, field: Literal["resource_stats"]) -> Paginator[data_classes.ResourceStat]:
+        ...
+
+    @overload
     def paginate(self, field: str) -> Paginator[Any]:
         ...
 
@@ -983,6 +988,7 @@ class Result:
     baseball_players: List[data_classes.BBPlayer]
     treasure_trades: List[data_classes.TreasureTrade]
     embargoes: List[data_classes.Embargo]
+    resource_stats: List[data_classes.ResourceStat]
     bankDeposit: data_classes.Bankrec  # noqa: N815
     bankWithdraw: data_classes.Bankrec  # noqa: N815
 
@@ -1035,6 +1041,7 @@ class Field:
         "baseball_players",
         "treasure_trades",
         "embargoes",
+        "resource_stats"
     }
 
     def __init__(
