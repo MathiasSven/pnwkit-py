@@ -1,7 +1,7 @@
 from setuptools import setup
 
 requirements = [
-    "aiohttp>=3.7.0,<3.9.0",
+    "aiohttp>=3.7.0",
     "requests>=2.25.0,<2.29.0",
     "beautifulsoup4>=4.10.0,<4.12.0",
 ]
